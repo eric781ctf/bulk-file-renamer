@@ -1,0 +1,17 @@
+# Python 標準庫（通常隨 Python 一起安裝，無需額外安裝）
+# tkinter - GUI 框架
+# os - 檔案系統操作
+# sys - 系統相關功能
+# json - JSON 資料處理
+# re - 正規表達式
+# datetime - 日期時間處理
+# pathlib - 路徑處理
+# subprocess - 子程序執行
+
+# 可選依賴（用於打包成執行檔）
+# pyinstaller>=4.0  # 用於建立獨立執行檔
+
+# 開發依賴（可選）
+# pytest>=6.0      # 單元測試框架
+# black>=21.0       # 程式碼格式化工具
+# flake8>=3.8       # 程式碼風格檢查

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>批量檔案重命名工具 - 使用手冊</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .feature-card h4 {
+            color: #495057;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .feature-card h4::before {
+            content: "🎯";
+            margin-right: 10px;
+        }
+        .step {
+            background: #e3f2fd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        .tip {
+            background: #d4edda;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        .screenshot {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 5px 0;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>批量檔案重命名工具 v1.0</h1>
+        <p style="text-align: center; color: #6c757d; font-size: 18px;">
+            功能豐富的桌面檔案重命名工具使用手冊
+        </p>
+
+        <div class="toc">
+            <h3>📋 目錄</h3>
+            <ul>
+                <li><a href="#introduction">1. 介紹</a></li>
+                <li><a href="#installation">2. 安裝與啟動</a></li>
+                <li><a href="#interface">3. 界面介紹</a></li>
+                <li><a href="#basic-usage">4. 基本使用方法</a></li>
+                <li><a href="#rename-rules">5. 重命名規則詳解</a></li>
+                <li><a href="#advanced-features">6. 進階功能</a></li>
+                <li><a href="#safety-tips">7. 安全提醒</a></li>
+                <li><a href="#troubleshooting">8. 疑難排解</a></li>
+            </ul>
+        </div>
+
+        <h2 id="introduction">🎯 1. 介紹</h2>
+        <p>批量檔案重命名工具是一個專為 Windows 用戶設計的桌面應用程式，旨在簡化批量檔案重命名的操作流程。無論您是需要整理照片檔案、規範文件命名，還是進行其他檔案管理任務，這個工具都能為您提供強大而靈活的解決方案。</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>多樣化規則</h4>
+                <p>支援前綴/後綴添加、文字替換、序列編號、大小寫轉換等多種重命名方式，可組合使用以滿足複雜需求。</p>
+            </div>
+            <div class="feature-card">
+                <h4>即時預覽</h4>
+                <p>在執行重命名前查看結果預覽，自動檢測檔名衝突，確保操作的準確性和安全性。</p>
+            </div>
+            <div class="feature-card">
+                <h4>操作記錄</h4>
+                <p>完整記錄每次重命名操作，支援一鍵復原，讓您可以安心進行批量操作。</p>
+            </div>
+            <div class="feature-card">
+                <h4>智能過濾</h4>
+                <p>支援按副檔名、檔名模式過濾檔案，精確控制要處理的檔案範圍。</p>
+            </div>
+        </div>
+
+        <h2 id="installation">💾 2. 安裝與啟動</h2>
+        
+        <h3>系統需求</h3>
+        <ul>
+            <li>作業系統：Windows 7/8/10/11</li>
+            <li>Python 版本：3.7 或更高版本</li>
+            <li>硬碟空間：至少 50MB 可用空間</li>
+        </ul>
+
+        <h3>安裝步驟</h3>
+        <div class="step">
+            <strong>步驟 1：</strong> 確保您的系統已安裝 Python 3.7+。如果沒有，請前往 
+            <a href="https://www.python.org/downloads/">Python 官網</a> 下載並安裝。
+        </div>
+        <div class="step">
+            <strong>步驟 2：</strong> 下載專案檔案到您的電腦（例如桌面）。
+        </div>
+        <div class="step">
+            <strong>步驟 3：</strong> 雙擊 <code>run.bat</code> 檔案啟動程式，或在命令提示字元中執行 <code>python main.py</code>。
+        </div>
+
+        <div class="tip">
+            <strong>💡 提示：</strong> 首次啟動可能需要幾秒鐘的初始化時間，這是正常現象。
+        </div>
+
+        <h2 id="interface">🖥️ 3. 界面介紹</h2>
+        
+        <p>應用程式採用直觀的分頁式設計，主要包含以下區域：</p>
+
+        <h3>主要區域</h3>
+        <ul>
+            <li><strong>目錄選擇欄：</strong> 用於選擇要處理的檔案目錄</li>
+            <li><strong>規則設定面板：</strong> 配置各種重命名規則和檔案過濾條件</li>
+            <li><strong>預覽面板：</strong> 顯示重命名結果預覽和檔案詳細資訊</li>
+            <li><strong>操作歷史：</strong> 查看和管理過往的重命名操作記錄</li>
+            <li><strong>狀態列：</strong> 顯示當前操作狀態和檔案統計資訊</li>
+        </ul>
+
+        <h3>工具列按鈕</h3>
+        <ul>
+            <li><span class="button">瀏覽目錄</span> - 選擇要處理的檔案目錄</li>
+            <li><span class="button">預覽重命名</span> - 生成重命名結果預覽</li>
+            <li><span class="button">執行重命名</span> - 執行實際的重命名操作</li>
+            <li><span class="button">復原操作</span> - 復原上一次的重命名操作</li>
+            <li><span class="button">刷新列表</span> - 重新載入檔案列表</li>
+        </ul>
+
+        <h2 id="basic-usage">🚀 4. 基本使用方法</h2>
+
+        <h3>快速入門</h3>
+        <div class="step">
+            <strong>1. 選擇目錄</strong><br>
+            點擊「瀏覽目錄」按鈕，選擇包含要重命名檔案的資料夾。
+        </div>
+        <div class="step">
+            <strong>2. 設定過濾條件（可選）</strong><br>
+            在「檔案過濾」區域輸入副檔名，例如：<code>.txt,.jpg,.png</code>
+        </div>
+        <div class="step">
+            <strong>3. 配置重命名規則</strong><br>
+            選擇規則類型（前綴、後綴、替換等），填入相應參數，點擊「應用規則」。
+        </div>
+        <div class="step">
+            <strong>4. 預覽結果</strong><br>
+            點擊「預覽重命名」查看結果，檢查是否有衝突或錯誤。
+        </div>
+        <div class="step">
+            <strong>5. 執行重命名</strong><br>
+            確認無誤後點擊「執行重命名」，系統會提示確認對話框。
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ 重要提醒：</strong> 在執行重命名前，建議先備份重要檔案，或在少量檔案上測試規則的正確性。
+        </div>
+
+        <h2 id="rename-rules">📝 5. 重命名規則詳解</h2>
+
+        <h3>前綴/後綴</h3>
+        <div class="feature-card">
+            <h4>前綴添加</h4>
+            <p><strong>功能：</strong> 在檔名前方添加指定文字</p>
+            <p><strong>範例：</strong> <code>document.txt</code> → <code>新_document.txt</code></p>
+            <p><strong>用途：</strong> 為檔案添加分類標籤、日期前綴等</p>
+        </div>
+
+        <div class="feature-card">
+            <h4>後綴添加</h4>
+            <p><strong>功能：</strong> 在檔名後方（副檔名前）添加指定文字</p>
+            <p><strong>範例：</strong> <code>document.txt</code> → <code>document_備份.txt</code></p>
+            <p><strong>用途：</strong> 添加版本號、狀態標記等</p>
+        </div>
+
+        <h3>文字替換</h3>
+        <div class="feature-card">
+            <h4>字串替換</h4>
+            <p><strong>功能：</strong> 將檔名中的特定文字替換為新文字</p>
+            <p><strong>範例：</strong> <code>old_file.txt</code> → <code>new_file.txt</code>（將 "old" 替換為 "new"）</p>
+            <p><strong>選項：</strong></p>
+            <ul>
+                <li>「包含副檔名」：是否在副檔名中也進行替換</li>
+                <li>支援區分大小寫的替換</li>
+            </ul>
+        </div>
+
+        <h3>序列編號</h3>
+        <div class="feature-card">
+            <h4>自動編號</h4>
+            <p><strong>功能：</strong> 為檔案添加自動遞增的序列編號</p>
+            <p><strong>設定選項：</strong></p>
+            <ul>
+                <li><strong>起始編號：</strong> 編號的起始數字（如：1、100）</li>
+                <li><strong>位數：</strong> 編號的總位數，不足補零（如：3位數產生 001、002、003）</li>
+            </ul>
+            <p><strong>範例：</strong> <code>photo1.jpg, photo2.jpg</code> → <code>001.jpg, 002.jpg</code></p>
+        </div>
+
+        <h3>大小寫轉換</h3>
+        <div class="feature-card">
+            <h4>大小寫控制</h4>
+            <p><strong>選項說明：</strong></p>
+            <ul>
+                <li><strong>保持原樣：</strong> 不改變大小寫</li>
+                <li><strong>全部大寫：</strong> <code>filename.txt</code> → <code>FILENAME.txt</code></li>
+                <li><strong>全部小寫：</strong> <code>FILENAME.txt</code> → <code>filename.txt</code></li>
+                <li><strong>首字母大寫：</strong> <code>filename.txt</code> → <code>Filename.txt</code></li>
+                <li><strong>標題格式：</strong> <code>file name.txt</code> → <code>File Name.txt</code></li>
+            </ul>
+        </div>
+
+        <h3>規則組合</h3>
+        <div class="tip">
+            <strong>💡 進階技巧：</strong> 您可以同時應用多個規則，系統會按照添加順序依次執行。例如：先進行文字替換，再添加前綴，最後轉換大小寫。
+        </div>
+
+        <h2 id="advanced-features">⚙️ 6. 進階功能</h2>
+
+        <h3>檔案過濾</h3>
+        <p>檔案過濾功能讓您可以精確控制要處理的檔案範圍：</p>
+        <ul>
+            <li><strong>副檔名過濾：</strong> 輸入 <code>.txt,.jpg,.png</code> 只處理這些類型的檔案</li>
+            <li><strong>空白過濾：</strong> 留空則處理目錄中的所有檔案</li>
+            <li><strong>多重條件：</strong> 用逗號分隔多個副檔名</li>
+        </ul>
+
+        <h3>預覽與檢測</h3>
+        <p>預覽功能提供詳細的重命名資訊：</p>
+        <ul>
+            <li><strong>即時預覽：</strong> 顯示重命名前後的檔名對比</li>
+            <li><strong>衝突檢測：</strong> 自動標記檔名衝突和無效檔名</li>
+            <li><strong>統計資訊：</strong> 顯示總檔案數、變更數、衝突數</li>
+            <li><strong>檔案詳情：</strong> 查看檔案大小、修改時間等資訊</li>
+        </ul>
+
+        <h3>操作歷史</h3>
+        <p>歷史功能為您提供完整的操作追蹤：</p>
+        <ul>
+            <li><strong>完整記錄：</strong> 記錄每次重命名的詳細資訊</li>
+            <li><strong>一鍵復原：</strong> 可復原任意歷史操作</li>
+            <li><strong>歷史管理：</strong> 查看、刪除、匯出操作記錄</li>
+            <li><strong>自動清理：</strong> 自動保留最近的操作記錄</li>
+        </ul>
+
+        <h2 id="safety-tips">🛡️ 7. 安全提醒</h2>
+
+        <div class="warning">
+            <h3>重要安全建議</h3>
+            <ul>
+                <li><strong>備份重要檔案：</strong> 在進行大量重命名前，請先備份重要資料</li>
+                <li><strong>小範圍測試：</strong> 建議先在少量檔案上測試規則的正確性</li>
+                <li><strong>仔細檢查預覽：</strong> 務必仔細檢查預覽結果再執行重命名</li>
+                <li><strong>避免系統檔案：</strong> 不要在系統重要目錄中使用此工具</li>
+                <li><strong>檔案權限：</strong> 確保對目標檔案有足夠的讀寫權限</li>
+            </ul>
+        </div>
+
+        <h3>系統限制</h3>
+        <ul>
+            <li>檔名長度受 Windows 系統限制（通常為 255 字元）</li>
+            <li>無法重命名正在被其他程式使用的檔案</li>
+            <li>某些系統檔案和受保護檔案無法重命名</li>
+            <li>不支援跨磁碟機的檔案移動操作</li>
+        </ul>
+
+        <h2 id="troubleshooting">🔧 8. 疑難排解</h2>
+
+        <h3>常見問題</h3>
+
+        <div class="feature-card">
+            <h4>問題：程式無法啟動</h4>
+            <p><strong>可能原因：</strong></p>
+            <ul>
+                <li>Python 版本過舊或未安裝</li>
+                <li>tkinter 模組缺失</li>
+                <li>檔案權限問題</li>
+            </ul>
+            <p><strong>解決方法：</strong></p>
+            <ul>
+                <li>確認 Python 版本為 3.7 或更高</li>
+                <li>重新安裝 Python（確保包含 tkinter）</li>
+                <li>以系統管理員身分執行</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h4>問題：重命名操作失敗</h4>
+            <p><strong>可能原因：</strong></p>
+            <ul>
+                <li>檔案被其他程式佔用</li>
+                <li>沒有足夠的寫入權限</li>
+                <li>檔名包含無效字元</li>
+                <li>目標檔名已存在</li>
+            </ul>
+            <p><strong>解決方法：</strong></p>
+            <ul>
+                <li>關閉可能使用檔案的程式</li>
+                <li>檢查檔案和目錄權限</li>
+                <li>檢查重命名規則是否產生有效檔名</li>
+                <li>使用預覽功能檢查衝突</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h4>問題：預覽結果不正確</h4>
+            <p><strong>可能原因：</strong></p>
+            <ul>
+                <li>規則設定錯誤</li>
+                <li>檔案過濾條件有誤</li>
+                <li>檔案列表需要刷新</li>
+            </ul>
+            <p><strong>解決方法：</strong></p>
+            <ul>
+                <li>檢查並調整重命名規則</li>
+                <li>確認檔案過濾設定</li>
+                <li>點擊「刷新列表」按鈕</li>
+                <li>重新選擇目錄</li>
+            </ul>
+        </div>
+
+        <h3>效能優化建議</h3>
+        <ul>
+            <li>對於大量檔案（超過 1000 個），建議分批處理</li>
+            <li>避免在網路磁碟機上直接操作</li>
+            <li>處理大檔案時可能需要更多時間，請耐心等待</li>
+            <li>定期清理操作歷史以節省儲存空間</li>
+        </ul>
+
+        <h3>聯絡支援</h3>
+        <p>如果您遇到本手冊未涵蓋的問題，歡迎通過以下方式尋求協助：</p>
+        <ul>
+            <li>GitHub Issues：提交問題回報</li>
+            <li>檢查是否有軟體更新</li>
+            <li>查閱官方文檔的最新版本</li>
+        </ul>
+
+        <div class="tip">
+            <h3>🎉 結語</h3>
+            <p>感謝您選擇批量檔案重命名工具！我們致力於為您提供簡單、安全、高效的檔案管理體驗。如果這個工具幫助到您，歡迎分享給更多需要的朋友。</p>
+            <p style="text-align: center; margin-top: 30px;">
+                <strong>批量檔案重命名工具 v1.0.0</strong><br>
+                <em>讓檔案管理更簡單高效！</em>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
