@@ -1,3 +1,6 @@
+# 應用程式特定文件
+history.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

@@ -38,9 +38,13 @@ class PreviewPanel:
         stats_label = ttk.Label(toolbar_frame, textvariable=self.stats_var)
         stats_label.pack(side=tk.RIGHT)
         
+        # 創建樹狀檢視容器
+        tree_frame = ttk.Frame(self.frame)
+        tree_frame.pack(fill=tk.BOTH, expand=True)
+        
         # 創建樹狀檢視
         columns = ('new_name', 'size', 'modified', 'status')
-        self.tree = ttk.Treeview(self.frame, columns=columns, show='tree headings')
+        self.tree = ttk.Treeview(tree_frame, columns=columns, show='tree headings')
         
         # 設定欄位標題
         self.tree.heading('#0', text='原檔名')
@@ -57,18 +61,18 @@ class PreviewPanel:
         self.tree.column('status', width=100)
         
         # 創建滾動條
-        v_scrollbar = ttk.Scrollbar(self.frame, orient=tk.VERTICAL, command=self.tree.yview)
-        h_scrollbar = ttk.Scrollbar(self.frame, orient=tk.HORIZONTAL, command=self.tree.xview)
+        v_scrollbar = ttk.Scrollbar(tree_frame, orient=tk.VERTICAL, command=self.tree.yview)
+        h_scrollbar = ttk.Scrollbar(tree_frame, orient=tk.HORIZONTAL, command=self.tree.xview)
         self.tree.configure(yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
         
-        # 排列組件
+        # 使用 grid 排列樹狀檢視和滾動條
         self.tree.grid(row=0, column=0, sticky='nsew')
         v_scrollbar.grid(row=0, column=1, sticky='ns')
         h_scrollbar.grid(row=1, column=0, sticky='ew')
         
         # 設定網格權重
-        self.frame.grid_rowconfigure(0, weight=1)
-        self.frame.grid_columnconfigure(0, weight=1)
+        tree_frame.grid_rowconfigure(0, weight=1)
+        tree_frame.grid_columnconfigure(0, weight=1)
         
         # 綁定事件
         self.tree.bind('<Double-1>', self.on_double_click)
